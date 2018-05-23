@@ -1,0 +1,18 @@
+<script src="angular.min.js">
+</script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope,$http,$q){
+$q.all([$http.get("pp1.html"),$http.get("pp2.html"),$http.get("pp3.html")]).then(function(dt){
+alert(dt[0].data)
+alert(dt[1].data)
+alert(dt[2].data)
+},function(x){
+alert(x.config.url)
+})
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+</body>
+
+

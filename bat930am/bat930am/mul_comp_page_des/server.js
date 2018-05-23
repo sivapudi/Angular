@@ -1,0 +1,5 @@
+exp=require("express")
+var app=exp()
+app.listen(3000)
+app.use(exp.static(__dirname))
+console.log("star...")

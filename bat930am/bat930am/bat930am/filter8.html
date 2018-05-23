@@ -1,0 +1,20 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.filter("f1",function(){
+return function(y){
+	str=""
+	for(i=y.length-1;i>=0;i--)
+		{
+			str+=y[i]
+		}
+		return str;
+	}
+})
+</script>
+<body ng-app="myapp">
+{{'madam' | f1}}
+{{"malayalam"|f1}}
+
+{{"scott"|f1}}
+</body>

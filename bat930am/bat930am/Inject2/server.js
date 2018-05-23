@@ -1,0 +1,5 @@
+ex=require("express")
+app=ex()
+app.listen(1000)
+console.log("Server started..")
+app.use(ex.static(__dirname))

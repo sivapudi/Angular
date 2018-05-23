@@ -1,0 +1,92 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($http,$scope){
+	$scope.result;
+	$scope.funins=function(){
+		ob={uname:$scope.t1,city:$scope.t2}
+		$http({
+		method:"post",url:"metins",data:ob
+		}).then(function(dt){
+		alert(dt.data)
+		$scope.funget()
+		})
+		}
+$scope.funget=function(){
+	$http.get("metget").then(function(dt){
+	$scope.result=(dt.data)
+	})
+	}
+$scope.funget()
+$scope.fundel=function(un){
+obje={uname:un}
+$http({
+method:"post",url:"deldata",data:obje
+}).then(function(dt){
+alert(dt.data)
+$scope.funget()
+})
+	}
+$scope.funupdate=function(un,city){
+	$scope.t11=un
+	$scope.t22=city
+	$scope.old={uname:un,city:city}
+	alert($scope.old)
+	}
+$scope.funsave=function(){
+	newobj={uname:$scope.t11,city:$scope.t22}
+	arr=[$scope.old,newobj]
+	$http({
+	method:"post",data:arr,url:"updatedata"
+	}).then(function(dt){
+	$scope.funget()
+	})
+	}
+	$scope.funupdate1=function(un){
+		ob={uname:un}
+		$http({
+		method:"post",url:"newfun",data:ob
+		}).then(function(dt){
+		$scope.tmp=(dt.data[0])
+		$scope.t11=$scope.tmp.uname
+		$scope.t22=$scope.tmp.city
+		})
+		}
+$scope.fundelalldata=function()
+{
+	$http.delete("delalldata").then(function(dt){
+	alert(dt.data)
+	$scope.funget()
+	})
+	}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+<input type="button" value="Delall" ng-click="fundelalldata()">
+<table border='1'>
+<tr ng-repeat="x in result">
+<td>{{x.uname}}
+<td>{{x.city}}
+<td><input type="button" value="Delete" ng-click="fundel(x.uname)">
+<input type="button" value="Update" ng-click="funupdate(x.uname,x.city)">
+<input type="button" value="Update" ng-click="funupdate1(x.uname)">
+</tr>
+</table>
+<div>
+<h2>Insert</h2>
+Name:<input ng-model="t1">
+<br>
+City:<input ng-model="t2">
+<br>
+<input type="button" value="Insert" ng-click="funins()">
+</div>
+<div>
+<h2>Update</h2>
+Name:<input ng-model="t11">
+<br>
+City:<input ng-model="t22">
+<br>
+<input type="button" value="Save" ng-click="funsave()">
+</div>
+
+</body>

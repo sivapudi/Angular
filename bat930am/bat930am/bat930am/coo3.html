@@ -1,0 +1,30 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js"></script>
+<script>
+app=angular.module("myapp",['ngCookies'])
+app.controller("c1",function($scope,$cookies){
+$scope.fun2=function(){
+	$scope.t2=$cookies.get($scope.t1)
+	}
+$scope.fun1=function(){
+	if($scope.chk1==true)
+	{
+	$cookies.put($scope.t1,$scope.t2)	
+	}
+	}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+Username:<input ng-model="t1" ng-blur="fun2()">
+<br>
+Password:<input type="password" ng-model="t2">
+<br>
+<input type="checkbox" ng-model="chk1">Remember Me
+<br>
+<input type="button" value="Login" ng-click="fun1()">
+</body>
+
+
+
+
+

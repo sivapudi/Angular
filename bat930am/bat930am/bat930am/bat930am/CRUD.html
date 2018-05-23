@@ -1,0 +1,61 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+$scope.users=[{uname:"scott",city:"hyd"},{uname:"john",city:"sec"},{uname:"amith",city:"vizag"}]
+
+$scope.fundel=function(ind){
+$scope.users.splice(ind,1)
+}
+$scope.funedit=function(i){
+$scope.gloind=i
+$scope.t11=$scope.users[i].uname
+$scope.t22=$scope.users[i].city
+}
+
+$scope.funsave=function(){
+$scope.users[$scope.gloind].uname=$scope.t11
+$scope.users[$scope.gloind].city=$scope.t22
+}
+
+$scope.funins=function(){
+obj={uname:$scope.t1,city:$scope.t2}
+//alert(obj)
+//console.log(obj)
+$scope.users.push(obj)
+$scope.t1=""
+$scope.t2=""
+}
+
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+<table border='1'>
+<tr ng-repeat="x in users">
+<td>{{x.uname}}</td>
+<td>{{x.city}}</td>
+<td><img src="del.jpg" width="20" ng-click="fundel($index)">
+<img src="edit.png" width="20" ng-click="funedit($index)">
+</tr>
+</table>
+<div>
+<h2>Insert</h2>
+Name:<input type="text" ng-model="t1">
+<br>
+City:<input ng-model="t2">
+<br>
+<input type="button" value="Insert" ng-click="funins()">
+</div>
+<div>
+<h2>Edit</h2>
+Name:<input type="text" ng-model="t11">
+<br>
+City:<input ng-model="t22">
+<br>
+<input type="button" value="Save" ng-click="funsave()">
+</div>
+</body>
+
+
+
+

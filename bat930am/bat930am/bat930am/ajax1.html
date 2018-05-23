@@ -1,0 +1,31 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope,$http){
+	$scope.t1="scott"
+$scope.fun1=function(){
+	str="test.php?un="+$scope.t1
+//	alert(str)
+	$http.post(str).then(function(x){
+	if(x.data==0)
+		{
+			$scope.str="Username available"
+			$scope.col="green"
+		}
+		else
+		{
+			$scope.str="Already Registered"
+			$scope.col="red"
+		}
+	})
+}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+Username:<input type="text" ng-model="t1" ng-blur="fun1()">
+<span style="color:{{col}}">
+{{str}}
+</span>
+</body>
+
+

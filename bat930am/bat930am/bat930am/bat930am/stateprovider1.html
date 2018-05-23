@@ -1,0 +1,27 @@
+<script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+<script>
+app=angular.module("myapp",['ui.router'])
+app.config(function($stateProvider){
+$stateProvider
+.state("about",{url:"/abt",templateUrl:"about.html"})
+.state("cnt",{url:"/cnt",templateUrl:"contact.html"})
+.state("ser",{url:"/ser",templateUrl:"service.html"})
+})
+</script>
+<body ng-app="myapp" >
+<a ui-sref="about">About Us</a>
+<a ui-sref="cnt">Contact Us</a>
+<a ui-sref="ser">Services Us</a>
+<div ui-view>
+</div>
+<div ui-view>
+</div>
+</body>
+
+
+
+
+
+
+

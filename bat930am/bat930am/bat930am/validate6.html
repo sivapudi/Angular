@@ -1,0 +1,9 @@
+<script src="angular.min.js"></script>
+<body ng-app>
+<form action="p1.html" name="f1">
+Age:<input type="number" min="10" max="70" name="txt1" ng-model="t1">
+<span ng-show="f1.txt1.$error.number">Enter Numbers Only</span>
+<span ng-show="f1.txt1.$error.min">Age > 10</span>
+<span ng-show="f1.txt1.$error.max">Age < 70</span>
+</form>
+</body>

@@ -1,0 +1,9 @@
+<script src="angular.min.js"></script>
+<body ng-app>
+<form action="p1.html" name="f1">
+Email:<input type="email" required name="txt2" ng-model="t2">
+
+<span ng-if="f1.txt2.$error.required">Enter Email Id</span>
+<span ng-if="f1.txt2.$error.email">Enter Proper Email  Id</span>
+</form>
+</body>

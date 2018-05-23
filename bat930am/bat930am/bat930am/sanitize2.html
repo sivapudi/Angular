@@ -1,0 +1,14 @@
+<script src="angular.min.js"></script>
+<script src="angular-sanitize.js"></script>
+<script>
+app=angular.module("myapp",['ngSanitize'])
+app.controller("c1",function($scope,$sce){
+$scope.x=$sce.trustAsHtml("<h2 style='color:red'>scott</h2><input>")
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+<div ng-bind-html="x"></div>
+</body>
+
+
+

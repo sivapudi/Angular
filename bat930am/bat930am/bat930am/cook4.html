@@ -1,0 +1,19 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js"></script>
+<script>
+app=angular.module("myapp",['ngCookies'])
+app.controller("c1",function($cookies){
+$cookies.put("sno",100)
+dt=new Date()
+dt.setDate(dt.getDate()+100)
+$cookies.put("city","hyd",{expires:dt})
+if($cookies.get("stt"))
+{
+$cookies.remove("stt");
+}
+else
+alert("Not av")
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+</body>

@@ -1,0 +1,20 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script>
+app=angular.module("myapp",['ngRoute'])
+app.config(function($routeProvider){
+$routeProvider
+.when("/cn",{templateUrl:"contact.html"})
+.when("/abt",{templateUrl:"about.html"})
+.when("/ser",{templateUrl:"service.html"})
+})
+</script>
+<body ng-app="myapp">
+<a href="#!cn">Open Contact</a>
+<a href="#!abt">Open Aboutus</a>
+<a href="#!ser">Open Services</a>
+<div ng-view>
+</div>
+</body>
+
+

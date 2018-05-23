@@ -1,0 +1,28 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+	$scope.tmp="uname"
+$scope.fun1=function(){
+	if($scope.tmp=="uname")
+	$scope.tmp="-uname"
+	else
+	$scope.tmp="uname"
+	}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1"  ng-init="obj=[{
+uname:'scott',city:'Hyd'
+},{
+uname:'John',city:'Sec'
+},{
+uname:'Sam',city:'Chennai'
+}]">
+<table border='1'>
+<th ng-click="fun1()">Username</th>
+<th>City</th>
+ <tr ng-repeat="x in obj | orderBy:tmp">
+  <td>{{x.uname}}<td>{{x.city}}</td>
+ </tr>
+</table>
+</body>

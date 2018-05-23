@@ -1,0 +1,15 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.directive("d1",function(){
+return{
+	scope:{
+		val1:"=x",val2:"=y"
+		},
+		template:"<h2>Welcome {{val2}}-{{val1}}</h2>"
+	}
+})
+</script>
+<body ng-app="myapp" >
+<d1 x="100" y="'scott'"></d1>
+</body>

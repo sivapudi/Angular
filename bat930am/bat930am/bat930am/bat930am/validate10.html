@@ -1,0 +1,21 @@
+<script src="angular.min.js"></script>
+<style>
+input.ng-valid{
+color:green;
+}
+input.ng-invalid{
+color:red;
+}
+#t2.ng-untouched{
+color:blue;
+}
+#t2.ng-dirty{
+color:black;
+}
+</style>
+<body ng-app ng-init="t2='Hyderabad'">
+<form action="p1.html" name="f1" >
+<input type="email" name="txt1" ng-model="t1" >
+<input type="text" name="t2" ng-model="t2" id="t2">
+</form>
+</body>

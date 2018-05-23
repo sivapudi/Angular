@@ -1,0 +1,13 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.filter("f1",function(){
+return function(y){
+	    str=y.replace(/scott/g,"SCOTT")
+		return str;
+	}
+})
+</script>
+<body ng-app="myapp">
+{{"hi scott how are you scott" | f1}}
+</body>

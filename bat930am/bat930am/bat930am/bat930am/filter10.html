@@ -1,0 +1,25 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.filter("f1",function(){
+return function(y){
+	    arr=y.split(" ")
+		str=""
+		for(i=0;i<arr.length;i++)
+		{
+			if(arr[i].match("<b>")!=null)
+			{
+			
+str+=arr[i].replace(/<b>/,"").replace("</b>","").toUpperCase()
+			}
+			else
+			str+=arr[i]
+			str+=" "
+		}
+		return str;
+	}
+})
+</script>
+<body ng-app="myapp" ng-init="x='hi <b>scott</b> how <b>are</b> you scott abcd <b>amith</b> <p>john</p> <b>alex</b>'">
+<div>{{x | f1}}</div>
+</body>

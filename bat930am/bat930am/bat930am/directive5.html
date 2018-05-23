@@ -1,0 +1,15 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.directive("d1",function(){
+return{
+	compile:function(x){
+		x.css("color","red").append("amith")
+		},
+	template:"Welcome"
+	}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+<d1></d1>
+</body>

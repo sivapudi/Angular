@@ -1,0 +1,12 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+$scope.fun1=function(e){
+	alert(e.type)
+	}
+})
+</script>
+<body ng-app="myapp" ng-controller="c1" >
+<img src="img1.jpg" width="100" ng-click="fun1($event)" ng-mouseover="fun1($event)">
+</body>

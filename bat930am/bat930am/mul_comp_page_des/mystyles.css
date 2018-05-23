@@ -1,0 +1,22 @@
+body{
+    margin: 0px;
+}
+.headerstyles{
+    background-color: lightgreen;
+    height:100px;
+}
+.leftstyles{
+    background-color: rgb(241, 212, 116);
+    height:400px;
+    width:100px;
+    float:left;
+}
+.rightstyles{
+    background-color: lightblue;
+    height:400px;
+}
+.footerstyles{
+    background-color: rgb(3, 14, 3);
+    height:100px;
+    color: white;
+}

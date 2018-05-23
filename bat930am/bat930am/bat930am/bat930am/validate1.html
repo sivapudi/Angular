@@ -1,0 +1,20 @@
+<script src="angular.min.js"></script>
+<body ng-app>
+<form action="p1.html" name="f1">
+<input type="text" name="t1" required ng-model="txt1">
+<br>
+Valid-{{f1.t1.$valid}}
+<br>
+Invalid-{{f1.t1.$invalid}}
+<br>
+Touched-{{f1.t1.$touched}}
+<br>
+Untouched-{{f1.t1.$untouched}}
+<br>
+Not yet Modified-{{f1.t1.$pristine}}
+<br>
+Modified-{{f1.t1.$dirty}}
+<br>
+<input type="submit" value="Send" onclick="fun1()">
+</form>
+</body>

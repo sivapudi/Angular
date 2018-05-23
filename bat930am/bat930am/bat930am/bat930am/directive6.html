@@ -1,0 +1,18 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.directive("d1",function(){
+	return{
+	link:function(scope){
+	scope.fun1=function(){
+		alert("hi")
+		}
+	},
+	template:"<h2>Welcome</h2>"
+	}
+})
+</script>
+<body ng-app="myapp" >
+<d1></d1>
+<input type="button" value="Click" ng-click="fun1()">
+</body>

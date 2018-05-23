@@ -1,0 +1,8 @@
+<script src="angular.min.js"></script>
+<body ng-app>
+<form action="p1.html" name="f1">
+Email:<input type="email" required name="txt2" ng-model="t2">
+<img src="tick.png" width="20" ng-show="f1.txt2.$valid">
+<img src="false.jpg" width="15" ng-show="f1.txt2.$invalid">
+</form>
+</body>

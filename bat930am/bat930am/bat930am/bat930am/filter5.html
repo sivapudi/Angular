@@ -1,0 +1,13 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.filter("f1",function(){
+return function(y){
+	return "hi "+y+" Good morning" 
+	}
+})
+</script>
+<body ng-app="myapp">
+{{'scott' | f1}}
+{{'amith' | f1}}
+</body>

@@ -1,0 +1,12 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js"></script>
+<script>
+angular.module("myapp",['ngCookies']).controller("c1",function($cookies){
+$cookies.put("city","hyd")
+dt=new Date()
+dt.setDate(dt.getDate()+100)
+$cookies.put("stt","Tg",{expires:dt})
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+</body>

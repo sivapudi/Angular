@@ -1,0 +1,20 @@
+<script src="angular.min.js"></script>
+<script>
+app=angular.module("myapp",[])
+app.controller("c1",function($scope){
+$scope.obj={uname:"scott",city:"hyd"}
+$scope.both=$scope.obj.uname+$scope.obj.city
+$scope.$watch("obj",function(){
+$scope.both=$scope.obj.uname+$scope.obj.city
+},true)
+})
+</script>
+<body ng-app="myapp" ng-controller="c1">
+{{obj.uname}}
+{{obj.city}}
+<input ng-model="obj.uname">
+{{both}}
+</body>
+
+
+

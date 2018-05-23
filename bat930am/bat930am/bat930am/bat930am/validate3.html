@@ -1,0 +1,10 @@
+<script src="angular.min.js"></script>
+<body ng-app>
+<form action="p1.html" name="f1">
+Name:<input type="text" name="t1" required ng-model="txt1">
+<br>
+Email:<input type="email" required name="txt2" ng-model="t2">
+<br>
+<input type="submit" value="Send" ng-show="f1.t1.$valid && f1.txt2.$valid">
+</form>
+</body>
