@@ -1,0 +1,18 @@
+<style>
+.abc{
+color:blue;
+font-weight:bold;
+font-family:arial;
+text-decoration:underline;
+font-size:20px;
+cursor:pointer;
+}
+.xyz{
+text-decoration:overline;
+font-size:30px;
+color:green;
+cursor:help;
+}
+</style>
+<span [ngStyle]="{color:'yellow',backgroundColor:'silver'}">Scott</span>
+<div [ngClass]="tmp" (mouseover)="tmp='xyz'" (mouseout)="tmp='abc'">Amith</div>

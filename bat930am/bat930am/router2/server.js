@@ -1,0 +1,5 @@
+ex=require("express")
+bp=require("body-parser")
+app=ex()
+app.listen(1000)
+app.use(ex.static(__dirname))
